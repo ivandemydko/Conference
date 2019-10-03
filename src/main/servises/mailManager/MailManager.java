@@ -31,9 +31,9 @@ public class MailManager {
     /**
      * This method notify {@link Speaker} that he was assigned to
      * some conferences.
-     * @param speaker is a <code>Speaker</code> who will be notified about assigment on conference.
-     * @param report is a <code>Report</code> that contains some information about conference.
      *
+     * @param speaker is a <code>Speaker</code> who will be notified about assigment on conference.
+     * @param report  is a <code>Report</code> that contains some information about conference.
      */
     public void notifySpeakerAppointment(Speaker speaker, Report report) {
         message.setLocale(speaker.getLanguage());
@@ -51,27 +51,31 @@ public class MailManager {
     /**
      * This method notify {@link Speaker} that he was dismissed from holding
      * the conference.
+     *
      * @param speaker is a <code>Speaker</code> who will be notified about dismissing from conference.
-     * @param report is a <code>Report</code> that contains some information about conference.
+     * @param report  is a <code>Report</code> that contains some information about conference.
      */
     public void notifySpeakerDismiss(Speaker speaker, Report report) {
-        message.setLocale(speaker.getLanguage());
-        MailThread mailOperator = new MailThread(speaker.getEmail(), message.getProperty("dismissFromConference"),
-                buildMessage(message.getProperty("dismissMessage"),
-                        speaker.getName(), report.getName(), dtm.fromDateToString(report.getDate()),
-                        dtm.fromTimeToString(report.getTime())
-                                + "\n" +
-                                buildMessage(message.getProperty("location"),
-                                        report.getAddress().getCity(), report.getAddress().getStreet(),
-                                        report.getAddress().getBuilding(), report.getAddress().getRoom())));
-        mailOperator.start();
+        if (speaker != null) {
+            message.setLocale(speaker.getLanguage());
+            MailThread mailOperator = new MailThread(speaker.getEmail(), message.getProperty("dismissFromConference"),
+                    buildMessage(message.getProperty("dismissMessage"),
+                            speaker.getName(), report.getName(), dtm.fromDateToString(report.getDate()),
+                            dtm.fromTimeToString(report.getTime())
+                                    + "\n" +
+                                    buildMessage(message.getProperty("location"),
+                                            report.getAddress().getCity(), report.getAddress().getStreet(),
+                                            report.getAddress().getBuilding(), report.getAddress().getRoom())));
+            mailOperator.start();
+        }
     }
 
     /**
      * This method notify all participants about some changes in conference.
+     *
      * @param newReport is a <code>Report</code> that that contains new information.
      * @param oldReport is a <code>Report</code> that contains unchanged information.
-     * @param userList is a List of {@link User} who will be informed about changes in conference.
+     * @param userList  is a List of {@link User} who will be informed about changes in conference.
      */
     public void notifyChangeConference(Report newReport, Report oldReport, List<User> userList) {
         for (User user : userList) {
@@ -98,7 +102,8 @@ public class MailManager {
 
     /**
      * This method notify {@link User} that he was successfully registered in conference.
-     * @param user is a <code>User</code> who will be informed about details of conference .
+     *
+     * @param user   is a <code>User</code> who will be informed about details of conference .
      * @param report is a <code>Report</code> that contains some information about conference.
      */
     public void notifyUserRegistration(User user, Report report) {

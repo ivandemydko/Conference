@@ -33,7 +33,7 @@ public class AssignPositionHelper implements CommandHelper {
             return "errorUserNotExists";
         }
         if (user.getPosition().equals(position)) {
-            logger.info("Such position: " + position + " does not exist");
+            logger.info("User is already on position: " + position);
             return "errorPosition";
         }
         int result = userManager.setUserPosition(user, position);

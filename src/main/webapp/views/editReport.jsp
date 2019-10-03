@@ -23,7 +23,7 @@
             <input type="hidden" name="index" value="${index}">
             <p><fmt:message key="label.theme" bundle="${rm}"/>: <c:out value="${report.name}"/></p>
             <p><fmt:message key="label.speaker" bundle="${rm}"/>:
-                <c:out value="${report.speaker.name} ${report.speaker.surname}"/>
+                <c:out value="${report.speaker.name} ${report.speaker.surname}"/></p>
             <p><fmt:message key="label.date" bundle="${rm}"/>: <input type="date" required name="date"
                                                                       min="<fmt:formatDate value="${now}" pattern="yyyy-MM-dd"/>"/>
             </p>

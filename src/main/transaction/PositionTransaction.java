@@ -15,6 +15,7 @@ import java.sql.SQLException;
  */
 public class PositionTransaction {
     private Logger logger = Logger.getLogger(PositionTransaction.class);
+
     public int setPositionForUser(User user, String position) {
         int result = 0;
         if (user.getPosition().equals(position)) {

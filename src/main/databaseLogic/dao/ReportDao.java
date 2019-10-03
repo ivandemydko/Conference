@@ -20,11 +20,9 @@ public interface ReportDao {
 
     List<Report> getOfferedConference(int offset, int maxCount);
 
-//    List<Report> getPastReports();
-
     void setAddressForReport(Long addressId, Long reportId);
 
-    int getCountOfFutureReports();                    // todo
+    int getCountOfFutureReports();
 
     int getCountOfPastReports();
 

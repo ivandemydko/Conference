@@ -31,6 +31,8 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>5.1.47</version>
     </dependency>
+
+
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
@@ -47,6 +49,9 @@
       <version>2.0</version>
       <scope>provided</scope>
     </dependency>
+
+
+
     <dependency>
       <groupId>javax.mail</groupId>
       <artifactId>mail</artifactId>
