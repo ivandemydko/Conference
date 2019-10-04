@@ -28,7 +28,7 @@
                 <p><fmt:message key="label.assignToPosition" bundle="${rm}"/></p>
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=assignPosition">
                     <p><input type="email" name="email" required
-                              placeholder="<fmt:message key="label.userEmail" bundle="${rm}"/>" size="15"
+                              placeholder="<fmt:message key="label.userEmail" bundle="${rm}"/>" size="25"
                               pattern="[a-z0-9_%+-]+@[a-z0-9_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
                     <p>
                         <select size="1" name="userType">
@@ -45,7 +45,7 @@
                 <p><fmt:message key="label.addRatingToSpeaker" bundle="${rm}"/></p>
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=addSpeakerRating">
                     <p><input type="email" name="email" required
-                              placeholder="<fmt:message key="label.speakerEmail" bundle="${rm}"/>" size="15"
+                              placeholder="<fmt:message key="label.speakerEmail" bundle="${rm}"/>" size="25"
                               pattern="[a-z0-9_%+-]+@[a-z0-9_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
                     <p>
                         <select size="1" name="rating">
@@ -68,7 +68,7 @@
                 <p><fmt:message key="label.addBonusesToSpeaker" bundle="${rm}"/></p>
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=addBonuses">
                     <p><input type="email" name="email" required
-                              placeholder="<fmt:message key="label.speakerEmail" bundle="${rm}"/>" size="15"
+                              placeholder="<fmt:message key="label.speakerEmail" bundle="${rm}"/>" size="25"
                               pattern="[a-z0-9_%+-]+@[a-z0-9_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
                     <p><input type="text" placeholder="<fmt:message key="label.amountOfBonuses" bundle="${rm}"/>"
                               required

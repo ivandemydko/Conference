@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>controller</servlet-name>
-        <servlet-class>controller.Controller</servlet-class>
+        <servlet-class>one.ua.controller.Controller</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>controller</servlet-name>

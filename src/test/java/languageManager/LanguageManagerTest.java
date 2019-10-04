@@ -4,7 +4,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import servises.languageManager.LanguageManager;
+import one.ua.servises.languageManager.LanguageManager;
 
 public class LanguageManagerTest {
     private static LanguageManager lm;

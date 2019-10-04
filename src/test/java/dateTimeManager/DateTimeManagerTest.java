@@ -4,7 +4,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import servises.dateTimeManager.DateTimeManager;
+import one.ua.servises.dateTimeManager.DateTimeManager;
 
 import java.sql.Date;
 import java.sql.Time;

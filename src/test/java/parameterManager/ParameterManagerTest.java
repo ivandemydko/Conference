@@ -1,11 +1,11 @@
 package parameterManager;
 
-import entity.Address;
+import one.ua.entity.Address;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import servises.parameterManager.ParameterManager;
+import one.ua.servises.parameterManager.ParameterManager;
 
 public class ParameterManagerTest {
     private static ParameterManager pm;

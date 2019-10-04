@@ -10,7 +10,7 @@
     <uri>/WEB-INF/bonusestag.tld</uri>
     <tag>
         <name>getbonuses</name>
-        <tag-class>tags.GetBonusesTag</tag-class>
+        <tag-class>one.ua.tags.GetBonusesTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 </taglib>
