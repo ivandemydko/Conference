@@ -79,24 +79,26 @@ public class MailManager {
      */
     public void notifyChangeConference(Report newReport, Report oldReport, List<User> userList) {
         for (User user : userList) {
-            message.setLocale(user.getLanguage());
-            MailThread mailOperator = new MailThread(user.getEmail(), message.getProperty("changedConference"),
-                    buildMessage(message.getProperty("changeInConference"),
-                            user.getName(), oldReport.getName(), dtm.fromDateToString(oldReport.getDate()),
-                            dtm.fromTimeToString(oldReport.getTime())) + "\n"
-                            +
-                            buildMessage(message.getProperty("location"),
-                                    oldReport.getAddress().getCity(), oldReport.getAddress().getStreet(),
-                                    oldReport.getAddress().getBuilding(), oldReport.getAddress().getRoom() + "\n\n")
-                            +
-                            buildMessage(message.getProperty("newConference"),
-                                    newReport.getName(), dtm.fromDateToString(newReport.getDate()),
-                                    dtm.fromTimeToString(newReport.getTime())) + "\n"
-                            +
-                            buildMessage(message.getProperty("location"),
-                                    newReport.getAddress().getCity(), newReport.getAddress().getStreet(),
-                                    newReport.getAddress().getBuilding(), newReport.getAddress().getRoom()));
-            mailOperator.start();
+            if (user != null) {
+                message.setLocale(user.getLanguage());
+                MailThread mailOperator = new MailThread(user.getEmail(), message.getProperty("changedConference"),
+                        buildMessage(message.getProperty("changeInConference"),
+                                user.getName(), oldReport.getName(), dtm.fromDateToString(oldReport.getDate()),
+                                dtm.fromTimeToString(oldReport.getTime())) + "\n"
+                                +
+                                buildMessage(message.getProperty("location"),
+                                        oldReport.getAddress().getCity(), oldReport.getAddress().getStreet(),
+                                        oldReport.getAddress().getBuilding(), oldReport.getAddress().getRoom() + "\n\n")
+                                +
+                                buildMessage(message.getProperty("newConference"),
+                                        newReport.getName(), dtm.fromDateToString(newReport.getDate()),
+                                        dtm.fromTimeToString(newReport.getTime())) + "\n"
+                                +
+                                buildMessage(message.getProperty("location"),
+                                        newReport.getAddress().getCity(), newReport.getAddress().getStreet(),
+                                        newReport.getAddress().getBuilding(), newReport.getAddress().getRoom()));
+                mailOperator.start();
+            }
         }
     }
 

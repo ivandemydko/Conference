@@ -166,7 +166,7 @@ public class ReportDaoImpl implements ReportDao {
         List<Report> reports = new ArrayList<>();
         SpeakerDao speakerDao = DaoFactory.getSpeakerDao(connection);
         try (PreparedStatement statement = connection.prepareStatement(
-                "SELECT id,name, speakerId from reports where date is null order by id limit ? OFFSET ?")) {
+                "SELECT id,name, speakerId from reports where date is null and speakerId is not null order by id limit ? OFFSET ?")) {
             statement.setInt(1, maxCount);
             statement.setInt(2, offset);
             ResultSet rs = statement.executeQuery();
@@ -188,7 +188,7 @@ public class ReportDaoImpl implements ReportDao {
     public int getCountOfOfferedReports() {
         int result = 0;
         try (Statement statement = connection.createStatement()) {
-            ResultSet rs = statement.executeQuery("SELECT count(*)as sum from reports where date is null");
+            ResultSet rs = statement.executeQuery("SELECT count(*)as sum from reports where date is null and speakerId is not null");
             if (rs.next()) {
                 result = rs.getInt("sum");
             }
@@ -202,17 +202,33 @@ public class ReportDaoImpl implements ReportDao {
     public int updateReport(Report report) {
         int result = 0;
         DateTimeManager dtm = new DateTimeManager();
-        try (PreparedStatement statement = connection.prepareStatement("UPDATE reports " +
-                "set name=?, date=?, time=?, speakerId=? where id=?")) {
-            statement.setString(1, report.getName());
-            statement.setDate(2, dtm.fromUtilDateToSqlDate(report.getDate()));
-            statement.setTime(3, report.getTime());
-            statement.setLong(4, report.getSpeaker().getId());
-            statement.setLong(5, report.getId());
-            result = statement.executeUpdate();
-
+        PreparedStatement statement=null;
+        try {
+            if (report.getSpeaker() == null) {
+                statement = connection.prepareStatement("UPDATE reports set name=?, date=?, time=? where id=?");
+                statement.setString(1, report.getName());
+                statement.setDate(2, dtm.fromUtilDateToSqlDate(report.getDate()));
+                statement.setTime(3, report.getTime());
+                statement.setLong(4, report.getId());
+                result = statement.executeUpdate();
+            } else {
+                statement = connection.prepareStatement("UPDATE reports set name=?, date=?, time=?, speakerId=? where id=?");
+                statement.setString(1, report.getName());
+                statement.setDate(2, dtm.fromUtilDateToSqlDate(report.getDate()));
+                statement.setTime(3, report.getTime());
+                statement.setLong(4, report.getSpeaker().getId());
+                statement.setLong(5, report.getId());
+                result = statement.executeUpdate();
+            }
         } catch (SQLException e) {
             logger.error(e);
+        }finally {
+            if(statement!=null)
+            try {
+                statement.close();
+            } catch (SQLException e) {
+                logger.error(e);
+            }
         }
         return result;
     }

@@ -2,6 +2,7 @@ package servises.paginationManager;
 
 import entity.Report;
 import servises.reportManager.ReportManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,8 @@ public class PaginationManager {
 
     private int countOfReports;
     private ReportManager reportManager = new ReportManager();
+    private final int INITIAL_SIZE = 5;
+    private final int INITIAL_OFFSET = 0;
 
     public PaginationManager(String requestButton, Integer sessionButton, String requestMaxCount, Integer sessionOffset, Integer sessionMaxCount) {
         this.requestButton = requestButton;
@@ -30,16 +33,17 @@ public class PaginationManager {
 
     /**
      * Defines data for pagination.
+     *
      * @param report defines certain conference list for pagination, can take values: "future", "past", "offered".
      */
     public void pagination(String report) {
         getCountOfReports(report);
         if (requestButton == null && requestMaxCount == null) {
-            maxCount = (sessionMaxCount != null) ? sessionMaxCount : 5;
-            offset = (sessionOffset != null) ? sessionOffset : 0;
+            maxCount = (sessionMaxCount != null) ? sessionMaxCount : INITIAL_SIZE;
+            offset = (sessionOffset != null) ? sessionOffset : INITIAL_OFFSET;
         } else {
             if (requestMaxCount == null) {
-                maxCount = sessionMaxCount == null ? 5 : sessionMaxCount;
+                maxCount = sessionMaxCount == null ? INITIAL_SIZE : sessionMaxCount;
             } else {
                 maxCount = Integer.parseInt(requestMaxCount);
             }
@@ -48,11 +52,21 @@ public class PaginationManager {
             } else if (sessionOffset != null) {
                 offset = sessionOffset / maxCount * maxCount;
             } else {
-                offset = 0;
+                offset = INITIAL_OFFSET;
             }
         }
+
         selectConference(report);
         buttons = getButtons(countOfReports, maxCount);
+
+        if (offset >= countOfReports && countOfReports > 0) {
+            offset = countOfReports - maxCount;
+            selectConference(report);
+            buttons = getButtons(countOfReports, maxCount);
+            if (sessionButton != null) {
+                sessionButton -= 1;
+            }
+        }
     }
 
     private void selectConference(String report) {
@@ -75,7 +89,6 @@ public class PaginationManager {
         }
     }
 
-
     private List<Integer> getButtons(int amountOfReports, int maxCountPerPage) {
         double buttons = amountOfReports / (double) maxCountPerPage;
         buttons = Math.ceil(buttons);
@@ -88,6 +101,7 @@ public class PaginationManager {
 
     /**
      * This method helps to define desired button when number of elements per page had been changed.
+     *
      * @return returns the number of the button that is used at a particular moment in time.
      */
     public int getCurrentButton() {

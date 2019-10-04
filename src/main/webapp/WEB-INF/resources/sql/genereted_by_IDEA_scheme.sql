@@ -10,6 +10,13 @@ create table address
     room char(5) not null
 );
 
+create table language
+(
+    id int auto_increment
+        primary key,
+    language char(3) null
+);
+
 create table positions
 (
     id int auto_increment
@@ -26,8 +33,12 @@ create table users
     email char(100) not null,
     password char(50) not null,
     position int null,
+    language int null,
     constraint users_ibfk_1
         foreign key (position) references positions (id)
+            on update cascade on delete set null,
+    constraint users_ibfk_2
+        foreign key (language) references language (id)
             on update cascade on delete set null
 );
 
@@ -36,6 +47,7 @@ create table speakerratings
     speakerId int not null
         primary key,
     rating int default 0 null,
+    bonuses int default 0 null,
     constraint speakerratings_ibfk_1
         foreign key (speakerId) references users (id)
             on update cascade on delete cascade
@@ -60,8 +72,6 @@ create table reports
 
 create table presence
 (
-    id int auto_increment
-        primary key,
     reportId int not null,
     count int null,
     constraint presence_ibfk_1
@@ -75,26 +85,29 @@ create index reportId
 create table registeredlist
 (
     reportId int not null,
-    userid int not null,
+    userId int not null,
     constraint registeredlist_ibfk_1
         foreign key (reportId) references reports (id)
             on update cascade on delete cascade,
     constraint registeredlist_ibfk_2
-        foreign key (userid) references users (id)
+        foreign key (userId) references users (id)
             on update cascade on delete cascade
 );
 
 create index reportId
     on registeredlist (reportId);
 
-create index userid
-    on registeredlist (userid);
+create index userId
+    on registeredlist (userId);
 
 create index addressId
     on reports (addressId);
 
 create index speakerId
     on reports (speakerId);
+
+create index language
+    on users (language);
 
 create index position
     on users (position);

@@ -15,7 +15,7 @@ public class SpeakerManager {
         if (speaker.getRating() == 0) {
             return bonuses;
         }
-        double result = bonuses += bonuses * (speaker.getRating() / 10.0);
+        double result = bonuses + bonuses * (speaker.getRating() / 10.0);
         return (int) result;
     }
 
