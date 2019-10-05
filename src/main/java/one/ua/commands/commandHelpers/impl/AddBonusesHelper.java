@@ -3,8 +3,8 @@ package one.ua.commands.commandHelpers.impl;
 import one.ua.commands.commandHelpers.CommandHelper;
 import one.ua.entity.Speaker;
 import org.apache.log4j.Logger;
-import one.ua.servises.parameterManager.ParameterManager;
-import one.ua.servises.spaekerManager.SpeakerManager;
+import one.ua.services.parameterManager.ParameterManager;
+import one.ua.services.spaekerManager.SpeakerManager;
 
 public class AddBonusesHelper implements CommandHelper {
     private Logger logger = Logger.getLogger(AddBonusesHelper.class);

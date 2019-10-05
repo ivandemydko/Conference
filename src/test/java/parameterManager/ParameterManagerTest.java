@@ -5,7 +5,7 @@ import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import one.ua.servises.parameterManager.ParameterManager;
+import one.ua.services.parameterManager.ParameterManager;
 
 public class ParameterManagerTest {
     private static ParameterManager pm;

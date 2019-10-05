@@ -1,4 +1,4 @@
-package one.ua.servises.configManager;
+package one.ua.services.configManager;
 
 import java.util.ResourceBundle;
 

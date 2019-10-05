@@ -1,4 +1,4 @@
-package one.ua.servises.dateTimeManager;
+package one.ua.services.dateTimeManager;
 
 import java.sql.Time;
 import java.text.DateFormat;
@@ -42,7 +42,7 @@ public class DateTimeManager {
      *  Transforms {@link String} to {@link java.sql.Time} in format(hh:mm)
      */
     public Time fromStringToTime(String time) {
-        DateFormat df = new SimpleDateFormat("hh:mm");
+        DateFormat df = new SimpleDateFormat("HH:mm");
         Time t = null;
         try {
             t = new Time(df.parse(time).getTime());

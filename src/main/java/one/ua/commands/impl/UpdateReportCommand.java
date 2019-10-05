@@ -4,8 +4,8 @@ package one.ua.commands.impl;
 import one.ua.commands.Command;
 import one.ua.commands.commandHelpers.impl.UpdateReportHelper;
 import one.ua.entity.Report;
-import one.ua.servises.configManager.ConfigManager;
-import one.ua.servises.messageManager.MessageManager;
+import one.ua.services.configManager.ConfigManager;
+import one.ua.services.messageManager.MessageManager;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;

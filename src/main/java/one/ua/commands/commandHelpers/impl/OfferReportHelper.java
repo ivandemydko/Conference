@@ -4,9 +4,9 @@ import one.ua.commands.commandHelpers.CommandHelper;
 import one.ua.entity.Speaker;
 import one.ua.entity.User;
 import org.apache.log4j.Logger;
-import one.ua.servises.parameterManager.ParameterManager;
-import one.ua.servises.reportManager.ReportManager;
-import one.ua.servises.spaekerManager.SpeakerManager;
+import one.ua.services.parameterManager.ParameterManager;
+import one.ua.services.reportManager.ReportManager;
+import one.ua.services.spaekerManager.SpeakerManager;
 
 public class OfferReportHelper implements CommandHelper {
     private Logger logger = Logger.getLogger(OfferReportHelper.class);

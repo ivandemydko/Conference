@@ -11,16 +11,13 @@
 <head>
     <title>Error</title>
     <style>
-        body{
+        body {
             text-align: center;
         }
     </style>
 </head>
 <body>
-
-
-    <h1>Oops something went wrong</h1>
-    <h3 align="center">Request from "${wrongAction}" is failed</h3>
-<img src="https://cdn.dribbble.com/users/129991/screenshots/3970015/error-page.png">
+<h1>Oops something went wrong</h1>
+<img src="${pageContext.request.contextPath}/resources/css/img/error-page.png" alt="img"/>
 </body>
 </html>

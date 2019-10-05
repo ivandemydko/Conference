@@ -2,6 +2,7 @@ package one.ua.databaseLogic.dao.impl;
 
 import one.ua.databaseLogic.connection.ConnectionPool;
 import one.ua.databaseLogic.dao.LanguageDao;
+import one.ua.exceptions.DataException;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -33,6 +34,7 @@ public class LanguageDaoImpl implements LanguageDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -48,6 +50,7 @@ public class LanguageDaoImpl implements LanguageDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return language;
     }

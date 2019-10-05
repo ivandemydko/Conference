@@ -3,9 +3,9 @@ package one.ua.commands.commandHelpers.impl;
 import one.ua.commands.commandHelpers.CommandHelper;
 import one.ua.entity.User;
 import org.apache.log4j.Logger;
-import one.ua.servises.languageManager.LanguageManager;
-import one.ua.servises.parameterManager.ParameterManager;
-import one.ua.servises.userManager.UserManager;
+import one.ua.services.languageManager.LanguageManager;
+import one.ua.services.parameterManager.ParameterManager;
+import one.ua.services.userManager.UserManager;
 
 public class RegisterHelper implements CommandHelper {
     private Logger logger = Logger.getLogger(RegisterHelper.class);
@@ -56,7 +56,6 @@ public class RegisterHelper implements CommandHelper {
 
         LanguageManager languageManager = new LanguageManager();
         language = languageManager.setLanguageToUser(language);
-        logger.info(language + "language " + " was set to user " + user.getEmail());
         user = new User(name, surname, email, password, position, language);
         language = languageManager.setLanguageToSession(language);
         logger.info(language + "language " + " was set to session");

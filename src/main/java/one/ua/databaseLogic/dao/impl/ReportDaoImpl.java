@@ -8,8 +8,9 @@ import one.ua.databaseLogic.factory.DaoFactory;
 import one.ua.entity.Address;
 import one.ua.entity.Report;
 import one.ua.entity.Speaker;
+import one.ua.exceptions.DataException;
 import org.apache.log4j.Logger;
-import one.ua.servises.dateTimeManager.DateTimeManager;
+import one.ua.services.dateTimeManager.DateTimeManager;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -43,6 +44,7 @@ public class ReportDaoImpl implements ReportDao {
             id = rs.getLong(1);
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return id;
     }
@@ -57,6 +59,7 @@ public class ReportDaoImpl implements ReportDao {
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
     }
 
@@ -69,6 +72,7 @@ public class ReportDaoImpl implements ReportDao {
             result = statement.executeUpdate();
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -98,6 +102,7 @@ public class ReportDaoImpl implements ReportDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return reports;
     }
@@ -127,6 +132,7 @@ public class ReportDaoImpl implements ReportDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return reports;
     }
@@ -142,6 +148,7 @@ public class ReportDaoImpl implements ReportDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -157,6 +164,7 @@ public class ReportDaoImpl implements ReportDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -180,6 +188,7 @@ public class ReportDaoImpl implements ReportDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return reports;
     }
@@ -194,6 +203,7 @@ public class ReportDaoImpl implements ReportDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -222,6 +232,7 @@ public class ReportDaoImpl implements ReportDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }finally {
             if(statement!=null)
             try {
@@ -241,6 +252,7 @@ public class ReportDaoImpl implements ReportDao {
             result = statement.executeUpdate("DELETE from reports where id=" + reportId);
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }

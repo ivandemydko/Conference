@@ -1,9 +1,8 @@
 body {
-    background: url(https://img.freepik.com/free-photo/_53876-89448.jpg?size=626&ext=jpg);
+    background: url("img/background.jpg");
     background-size: cover;
     font-family: cursive;
 }
-
 
 div {
     border: solid 2px black;

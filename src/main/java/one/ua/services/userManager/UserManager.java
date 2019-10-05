@@ -1,4 +1,4 @@
-package one.ua.servises.userManager;
+package one.ua.services.userManager;
 
 
 

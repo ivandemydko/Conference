@@ -1,7 +1,7 @@
 package one.ua.filters;
 
 import one.ua.entity.User;
-import one.ua.servises.configManager.ConfigManager;
+import one.ua.services.configManager.ConfigManager;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

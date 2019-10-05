@@ -1,12 +1,13 @@
-package one.ua.servises.mailManager;
+package one.ua.services.mailManager;
 
 import one.ua.entity.Report;
 import one.ua.entity.Speaker;
 import one.ua.entity.User;
-import one.ua.servises.dateTimeManager.DateTimeManager;
-import one.ua.servises.messageManager.MessageManager;
+import one.ua.services.dateTimeManager.DateTimeManager;
+import one.ua.services.messageManager.MessageManager;
 
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**

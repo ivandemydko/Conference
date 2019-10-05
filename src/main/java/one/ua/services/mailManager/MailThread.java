@@ -1,4 +1,4 @@
-package one.ua.servises.mailManager;
+package one.ua.services.mailManager;
 
 
 import org.apache.log4j.Logger;

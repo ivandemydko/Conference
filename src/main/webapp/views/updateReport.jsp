@@ -5,18 +5,18 @@
   Time: 15:20
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<c:import url="header.jsp" charEncoding="utf-8"/>
+<c:import url="header.jsp"/>
 
 <html>
 <head>
     <title>Title</title>
-    <style>
-        <c:import url="/WEB-INF/resources/css/styles.css" charEncoding="utf-8"/>
-    </style>
+<%--    <style>--%>
+<%--        <c:import url="/css/styles.css" charEncoding="utf-8"/>--%>
+<%--    </style>--%>
 </head>
 <body>
 <c:set var="report" value="${sessionScope.reportList[index]}"/>

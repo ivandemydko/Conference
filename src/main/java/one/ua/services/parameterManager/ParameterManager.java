@@ -1,8 +1,8 @@
-package one.ua.servises.parameterManager;
+package one.ua.services.parameterManager;
 
 import one.ua.entity.Address;
 import one.ua.entity.User;
-import one.ua.servises.userManager.UserManager;
+import one.ua.services.userManager.UserManager;
 
 
 import java.util.regex.Matcher;

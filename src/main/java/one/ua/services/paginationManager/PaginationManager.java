@@ -1,7 +1,7 @@
-package one.ua.servises.paginationManager;
+package one.ua.services.paginationManager;
 
 import one.ua.entity.Report;
-import one.ua.servises.reportManager.ReportManager;
+import one.ua.services.reportManager.ReportManager;
 
 import java.util.ArrayList;
 import java.util.List;

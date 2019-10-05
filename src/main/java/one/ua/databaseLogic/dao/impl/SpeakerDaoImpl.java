@@ -6,6 +6,7 @@ import one.ua.databaseLogic.dao.PositionDao;
 import one.ua.databaseLogic.dao.SpeakerDao;
 import one.ua.databaseLogic.factory.DaoFactory;
 import one.ua.entity.Speaker;
+import one.ua.exceptions.DataException;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -49,6 +50,7 @@ public class SpeakerDaoImpl implements SpeakerDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return speaker;
     }
@@ -78,6 +80,7 @@ public class SpeakerDaoImpl implements SpeakerDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return speaker;
     }
@@ -89,6 +92,7 @@ public class SpeakerDaoImpl implements SpeakerDao {
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
     }
 
@@ -101,6 +105,7 @@ public class SpeakerDaoImpl implements SpeakerDao {
             result = statement.executeUpdate();
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -115,6 +120,7 @@ public class SpeakerDaoImpl implements SpeakerDao {
             result = statement.executeUpdate();
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -131,6 +137,7 @@ public class SpeakerDaoImpl implements SpeakerDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return bonuses;
     }
@@ -142,6 +149,7 @@ public class SpeakerDaoImpl implements SpeakerDao {
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
     }
 

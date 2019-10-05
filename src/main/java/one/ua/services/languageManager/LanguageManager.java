@@ -1,4 +1,4 @@
-package one.ua.servises.languageManager;
+package one.ua.services.languageManager;
 
 
 import one.ua.entity.User;

@@ -6,6 +6,7 @@ import one.ua.databaseLogic.dao.PositionDao;
 import one.ua.databaseLogic.dao.UserDao;
 import one.ua.databaseLogic.factory.DaoFactory;
 import one.ua.entity.User;
+import one.ua.exceptions.DataException;
 import org.apache.log4j.Logger;
 import java.sql.*;
 
@@ -40,6 +41,7 @@ public class UserDaoImpl implements UserDao {
             id = rs.getLong(1);
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return id;
     }
@@ -65,6 +67,7 @@ public class UserDaoImpl implements UserDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return user;
     }
@@ -89,6 +92,7 @@ public class UserDaoImpl implements UserDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return user;
     }

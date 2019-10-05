@@ -2,7 +2,7 @@ package speakerManager;
 
 import one.ua.entity.Speaker;
 import org.junit.*;
-import one.ua.servises.spaekerManager.SpeakerManager;
+import one.ua.services.spaekerManager.SpeakerManager;
 
 public class SpeakerManagerTest {
     private static SpeakerManager speakerManager;

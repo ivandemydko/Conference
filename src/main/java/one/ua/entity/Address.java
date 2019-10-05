@@ -77,15 +77,4 @@ public class Address {
   public int hashCode() {
     return Objects.hash(id, city, street, building, room);
   }
-
-  @Override
-  public String toString() {
-    return "Address{" +
-            "id=" + id +
-            ", city='" + city + '\'' +
-            ", street='" + street + '\'' +
-            ", building='" + building + '\'' +
-            ", room='" + room + '\'' +
-            '}';
-  }
 }

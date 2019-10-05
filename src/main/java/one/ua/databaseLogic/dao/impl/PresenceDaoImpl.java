@@ -2,6 +2,7 @@ package one.ua.databaseLogic.dao.impl;
 
 import one.ua.databaseLogic.connection.ConnectionPool;
 import one.ua.databaseLogic.dao.PresenceDao;
+import one.ua.exceptions.DataException;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -35,6 +36,7 @@ public class PresenceDaoImpl implements PresenceDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         } finally {
             if (statement != null)
                 try {
@@ -57,6 +59,7 @@ public class PresenceDaoImpl implements PresenceDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -70,6 +73,7 @@ public class PresenceDaoImpl implements PresenceDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return false;
     }

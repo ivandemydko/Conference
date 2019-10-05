@@ -3,7 +3,7 @@ package one.ua.tags;
 import one.ua.entity.Speaker;
 import one.ua.entity.User;
 import org.apache.log4j.Logger;
-import one.ua.servises.spaekerManager.SpeakerManager;
+import one.ua.services.spaekerManager.SpeakerManager;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;

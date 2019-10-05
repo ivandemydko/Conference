@@ -1,4 +1,4 @@
-package one.ua.servises.reportManager;
+package one.ua.services.reportManager;
 
 import one.ua.databaseLogic.dao.ReportDao;
 import one.ua.databaseLogic.factory.DaoFactory;

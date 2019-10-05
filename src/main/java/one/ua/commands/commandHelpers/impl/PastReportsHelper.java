@@ -3,8 +3,8 @@ package one.ua.commands.commandHelpers.impl;
 import one.ua.commands.commandHelpers.CommandHelper;
 import one.ua.entity.Report;
 import org.apache.log4j.Logger;
-import one.ua.servises.paginationManager.PaginationManager;
-import one.ua.servises.presenceManager.PresenceManager;
+import one.ua.services.paginationManager.PaginationManager;
+import one.ua.services.presenceManager.PresenceManager;
 
 import java.util.List;
 import java.util.Map;

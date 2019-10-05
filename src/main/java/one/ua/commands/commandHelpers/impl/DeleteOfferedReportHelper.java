@@ -4,8 +4,8 @@ import one.ua.commands.commandHelpers.CommandHelper;
 
 import one.ua.entity.Report;
 import org.apache.log4j.Logger;
-import one.ua.servises.paginationManager.PaginationManager;
-import one.ua.servises.reportManager.ReportManager;
+import one.ua.services.paginationManager.PaginationManager;
+import one.ua.services.reportManager.ReportManager;
 
 import java.util.List;
 

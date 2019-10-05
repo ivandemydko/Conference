@@ -4,6 +4,7 @@ import one.ua.databaseLogic.connection.ConnectionPool;
 import one.ua.databaseLogic.dao.PositionDao;
 
 import one.ua.entity.User;
+import one.ua.exceptions.DataException;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -35,6 +36,7 @@ public class PositionDaoImpl implements PositionDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return position;
     }
@@ -50,6 +52,7 @@ public class PositionDaoImpl implements PositionDao {
             result = rs.getInt("id");
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -63,6 +66,7 @@ public class PositionDaoImpl implements PositionDao {
             result = statement.executeUpdate();
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }

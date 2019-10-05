@@ -2,7 +2,7 @@ package one.ua.commands.impl;
 
 import one.ua.commands.Command;
 import one.ua.commands.commandHelpers.impl.ShowOfferedReportsHelper;
-import one.ua.servises.configManager.ConfigManager;
+import one.ua.services.configManager.ConfigManager;
 
 import javax.servlet.http.HttpServletRequest;
 

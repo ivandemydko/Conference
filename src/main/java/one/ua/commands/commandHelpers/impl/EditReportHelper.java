@@ -5,10 +5,10 @@ import one.ua.entity.Address;
 import one.ua.entity.Report;
 import one.ua.entity.Speaker;
 import org.apache.log4j.Logger;
-import one.ua.servises.dateTimeManager.DateTimeManager;
-import one.ua.servises.mailManager.MailManager;
-import one.ua.servises.parameterManager.ParameterManager;
-import one.ua.servises.reportManager.ReportManager;
+import one.ua.services.dateTimeManager.DateTimeManager;
+import one.ua.services.mailManager.MailManager;
+import one.ua.services.parameterManager.ParameterManager;
+import one.ua.services.reportManager.ReportManager;
 
 import java.sql.Date;
 import java.sql.Time;

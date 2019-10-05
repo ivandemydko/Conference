@@ -1,4 +1,4 @@
-package one.ua.servises.spaekerManager;
+package one.ua.services.spaekerManager;
 
 import one.ua.databaseLogic.dao.SpeakerDao;
 import one.ua.databaseLogic.factory.DaoFactory;

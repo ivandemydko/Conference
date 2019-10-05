@@ -23,9 +23,7 @@
 <html>
 <head>
     <title><fmt:message key="label.conference" bundle="${rm}"/></title>
-    <style>
-        <c:import url="/WEB-INF/resources/css/styles.css"/>
-    </style>
+    <link href="${pageContext.request.contextPath}/resources/css/styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div class="header">

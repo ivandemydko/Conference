@@ -3,6 +3,7 @@ package one.ua.databaseLogic.dao.impl;
 import one.ua.databaseLogic.connection.ConnectionPool;
 import one.ua.databaseLogic.dao.AddressDao;
 import one.ua.entity.Address;
+import one.ua.exceptions.DataException;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -34,6 +35,7 @@ public class AddressDaoImpl implements AddressDao {
             id = rs.getLong(1);
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return id;
     }
@@ -54,6 +56,7 @@ public class AddressDaoImpl implements AddressDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return id;
     }
@@ -75,6 +78,7 @@ public class AddressDaoImpl implements AddressDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return address;
     }

@@ -4,8 +4,8 @@ import one.ua.commands.commandHelpers.CommandHelper;
 import one.ua.entity.Report;
 import one.ua.entity.User;
 import org.apache.log4j.Logger;
-import one.ua.servises.mailManager.MailManager;
-import one.ua.servises.registerManager.RegisterManager;
+import one.ua.services.mailManager.MailManager;
+import one.ua.services.registerManager.RegisterManager;
 
 import java.util.List;
 import java.util.Map;

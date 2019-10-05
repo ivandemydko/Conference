@@ -5,12 +5,11 @@
   Time: 14:02
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<c:import url="header.jsp" charEncoding="utf-8"/>
-
+<c:import url="header.jsp"/>
 <html>
 <head>
     <title>Title</title>
@@ -21,7 +20,7 @@
 <div class="center">
     <c:forEach items="${sessionScope.reportList}" var="report" varStatus="loop">
         <div class="futureReports">
-            <p>id : ${report.id}</p>
+            <p>id: ${report.id}</p>
             <p><fmt:message key="label.theme" bundle="${rm}"/>: ${report.name}</p>
             <p><fmt:message key="label.date" bundle="${rm}"/>: ${report.date}</p>
             <p><fmt:message key="label.time" bundle="${rm}"/>: <fmt:formatDate value="${report.time}" type="time"

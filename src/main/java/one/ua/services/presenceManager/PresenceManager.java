@@ -1,4 +1,4 @@
-package one.ua.servises.presenceManager;
+package one.ua.services.presenceManager;
 
 import one.ua.databaseLogic.dao.PresenceDao;
 import one.ua.databaseLogic.factory.DaoFactory;

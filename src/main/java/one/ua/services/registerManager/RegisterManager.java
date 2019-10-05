@@ -1,4 +1,4 @@
-package one.ua.servises.registerManager;
+package one.ua.services.registerManager;
 
 import one.ua.databaseLogic.dao.RegisterDao;
 import one.ua.databaseLogic.factory.DaoFactory;

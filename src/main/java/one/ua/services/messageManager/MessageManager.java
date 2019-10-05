@@ -1,4 +1,4 @@
-package one.ua.servises.messageManager;
+package one.ua.services.messageManager;
 
 import java.util.Locale;
 import java.util.ResourceBundle;

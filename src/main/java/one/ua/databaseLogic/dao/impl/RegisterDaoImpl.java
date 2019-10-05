@@ -5,6 +5,7 @@ import one.ua.databaseLogic.dao.RegisterDao;
 import one.ua.databaseLogic.dao.UserDao;
 import one.ua.databaseLogic.factory.DaoFactory;
 import one.ua.entity.User;
+import one.ua.exceptions.DataException;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -31,6 +32,7 @@ public class RegisterDaoImpl implements RegisterDao {
             result = statement.executeUpdate();
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
@@ -47,6 +49,7 @@ public class RegisterDaoImpl implements RegisterDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return list;
     }
@@ -65,6 +68,7 @@ public class RegisterDaoImpl implements RegisterDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return userList;
     }
@@ -80,6 +84,7 @@ public class RegisterDaoImpl implements RegisterDao {
             }
         } catch (SQLException e) {
             logger.error(e);
+            throw new DataException(e);
         }
         return result;
     }
