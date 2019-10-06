@@ -115,7 +115,7 @@ public class UpdateReportHelper implements CommandHelper {
             reportList.set(Integer.parseInt(index), newReport);
         } else {
             logger.info("No changes made");
-            return "NoChangesMade";
+            return "noChangesMade";
         }
 
         RegisterManager registerManager = new RegisterManager();

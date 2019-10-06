@@ -19,3 +19,6 @@
 * You can select either "scheme.sql" or "generated_by_IDEA_scheme.sql"
 * Execute selected script by MySQLWorkbench or other IDE
 * Execute "insert.sql" 
+* Create text file for logging on your disk and specify path to it to 
+  directory "src/main/webapp/WEB-INF/resources/log4j.properties" 
+  for property "log4j.appender.file.File"

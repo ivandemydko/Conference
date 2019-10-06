@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-<h1>Oops something went wrong</h1>
-<img src="${pageContext.request.contextPath}/resources/css/img/error-page.png" alt="img"/>
+<h1>Oops... something went wrong</h1>
+<img src="${pageContext.request.contextPath}/resources/css/img/error-page.png" alt="img error"/>
 </body>
 </html>

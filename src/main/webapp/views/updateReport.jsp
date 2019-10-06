@@ -92,8 +92,8 @@
             <c:when test="${not empty errorSpeakerNotExists}">
                 <fmt:message key="errorSpeakerNotExists" bundle="${rm}"/>
             </c:when>
-            <c:when test="${not empty NoChangesMade}">
-                <fmt:message key="NoChangesMade" bundle="${rm}"/>
+            <c:when test="${not empty noChangesMade}">
+                <fmt:message key="noChangesMade" bundle="${rm}"/>
             </c:when>
         </c:choose>
     </p>
