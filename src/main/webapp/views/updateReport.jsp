@@ -14,9 +14,6 @@
 <html>
 <head>
     <title>Title</title>
-<%--    <style>--%>
-<%--        <c:import url="/css/styles.css" charEncoding="utf-8"/>--%>
-<%--    </style>--%>
 </head>
 <body>
 <c:set var="report" value="${sessionScope.reportList[index]}"/>
@@ -64,7 +61,7 @@
                 | <fmt:message key="label.changeSpeaker" bundle="${rm}"/>: <input type="email"
                                                                                   placeholder="<fmt:message key="label.speakerEmail" bundle="${rm}"/>"
                                                                                   name="speakerEmail"
-                                                                                  pattern="[a-z0-9_%+-]+@[a-z0-9_]+\.[a-z]{2,}[\.a-z]{0,}"/>
+                                                                                  pattern="[a-z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"/>
             </p>
             <p><input type="submit" value="<fmt:message key="label.changeReport" bundle="${rm}"/>"/></p>
         </form>

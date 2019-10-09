@@ -19,7 +19,9 @@
 <div class="center">
     <div class="register">
         <form method="post" action="${pageContext.request.contextPath}/controller?command=login">
-            <p><input type="email" name="email" placeholder="Email" size="22" required/></p>
+            <p><input type="email" name="email" placeholder="Email"
+                      pattern="[a-z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"
+                      size="22" required/></p>
             <p><input type="password" name="password" placeholder="<fmt:message key="label.password" bundle="${rm}"/>"
                       size="22"
                       pattern="[A-Za-zА-Яа-яЁёІіЄєЇї0-9]{5,}" required/></p>
