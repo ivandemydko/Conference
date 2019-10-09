@@ -1,6 +1,6 @@
 package one.ua.controller;
 
-import one.ua.commands.actionFactory.ActionFactory;
+import one.ua.commands.commandFactory.CommandFactory;
 import one.ua.commands.Command;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,7 +27,7 @@ public class Controller extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ActionFactory actionFactory = new ActionFactory();
+        CommandFactory actionFactory = new CommandFactory();
         Command command = actionFactory.defineCommand(req);
         String  page = command.execute(req);
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(page);

@@ -1,4 +1,4 @@
-package one.ua.commands.actionFactory;
+package one.ua.commands.commandFactory;
 
 import one.ua.commands.Command;
 import one.ua.commands.commandEnum.CommandEnum;
@@ -8,12 +8,12 @@ import org.apache.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.MissingResourceException;
 
-public class ActionFactory {
+public class CommandFactory {
     /**
      * @return  {@link Command} that is used in Controller
      */
     public Command defineCommand(HttpServletRequest request) {
-        Logger logger = Logger.getLogger(ActionFactory.class);
+        Logger logger = Logger.getLogger(CommandFactory.class);
         Command current;
         String action = request.getParameter("command");
         try {
