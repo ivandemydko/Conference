@@ -27,7 +27,7 @@
                       size="25"
                       pattern="[A-Za-zА-Яа-яЁёІіЄєЇї-]{1,50}"/></p>
             <p><input type="email" name="email" required placeholder="Email" size="25"
-                      pattern="[a-z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
+                      pattern="[a-zA-Z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
             <p><input type="password" name="password" required
                       placeholder="<fmt:message key="label.password" bundle="${rm}"/>" size="25"/></p>
             <p>

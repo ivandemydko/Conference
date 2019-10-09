@@ -30,7 +30,7 @@ public class AssignPositionHelper implements CommandHelper {
         User user = userManager.getUserByEmail(email);
         if (user == null) {
             logger.info("User with email: " + email + " does not exist");
-            return "errorUserNotExists";
+            return "errorUser";
         }
         if (user.getPosition().equals(position)) {
             logger.info("User is already on position: " + position);

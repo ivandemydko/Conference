@@ -29,7 +29,7 @@
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=assignPosition">
                     <p><input type="email" name="email" required
                               placeholder="<fmt:message key="label.userEmail" bundle="${rm}"/>" size="25"
-                              pattern="[a-z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
+                              pattern="[a-zA-Z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
                     <p>
                         <select size="1" name="userType">
                             <option value="Moderator"><fmt:message key="label.moderator" bundle="${rm}"/></option>
@@ -46,7 +46,7 @@
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=addSpeakerRating">
                     <p><input type="email" name="email" required
                               placeholder="<fmt:message key="label.speakerEmail" bundle="${rm}"/>" size="25"
-                              pattern="[a-z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
+                              pattern="[a-zA-Z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
                     <p>
                         <select size="1" name="rating">
                             <option value="1">1</option>
@@ -69,7 +69,7 @@
                 <form method="post" action="${pageContext.request.contextPath}/controller?command=addBonuses">
                     <p><input type="email" name="email" required
                               placeholder="<fmt:message key="label.speakerEmail" bundle="${rm}"/>" size="25"
-                              pattern="[a-z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
+                              pattern="[a-zA-Z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"/></p>
                     <p><input type="text" placeholder="<fmt:message key="label.amountOfBonuses" bundle="${rm}"/>"
                               required
                               name="bonuses" pattern="[0-9]{1,}"/></p>
@@ -101,7 +101,7 @@
                               placeholder="<fmt:message key="label.room" bundle="${rm}"/>" required/>
                     </p>
                     <p><input type="email" name="speakerEmail" size="30"
-                              pattern="[a-z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"
+                              pattern="[a-zA-Z0-9_%!#$&'*+-/=?^`{|}~]+@[a-z0-9-_]+\.[a-z]{2,}[\.a-z]{0,}"
                               placeholder="<fmt:message key="label.choseSpeaker" bundle="${rm}"/>" required/>
                     </p>
                     <p><input type="submit" value="<fmt:message key="label.addReport" bundle="${rm}"/>"></p>
@@ -162,7 +162,10 @@
                 <fmt:message key="noActionDone" bundle="${rm}"/>
             </c:when>
             <c:when test="${not empty errorTheme}">
-                <fmt:message key="errorTheme" bundle="${rm}"/>
+                <fmt:message key="errorTheme" bundle="${rm}"/> errorUser
+            </c:when>
+            <c:when test="${not empty errorUser}">
+                <fmt:message key="errorUser" bundle="${rm}"/>
             </c:when>
         </c:choose>
     </p>
